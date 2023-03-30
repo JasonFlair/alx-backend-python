@@ -6,5 +6,6 @@ import typing
 
 
 def to_kv(k: str, v: typing.Union[int, float]) -> typing.Tuple[str, float]:
+    """returns a key value tuple"""
     square_of_v: float = (v ** 2)
     return k, square_of_v
