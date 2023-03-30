@@ -3,6 +3,6 @@
 from math import floor
 
 
-def floor(n: float) -> floor:
+def floor(n: float) -> int:
     """concatenation function"""
     return int(n)
