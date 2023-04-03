@@ -7,12 +7,12 @@ import time
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n: int, max_delay: float) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """async function to solve the task"""
     start_time = time.time()
     asyncio.run(wait_n(n, max_delay))
     end_time = time.time()
 
-    # per n time is total time / n
-    per_n_time = (end_time - start_time) / n
+    total_time = (end_time - start_time) / n
+    per_n_time = total_time / n
     return per_n_time
