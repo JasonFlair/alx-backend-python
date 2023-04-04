@@ -2,12 +2,10 @@
 """measures time of async comprehension"""
 import time
 
-import typing
-
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime() -> typing.List['float']:
+async def measure_runtime() -> float:
     """function that performs time measurement
     of the async comprehension function"""
     start_time = time.time()
