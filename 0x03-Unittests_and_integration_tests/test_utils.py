@@ -71,7 +71,7 @@ class TestMemoize(unittest.TestCase):
             # so assign value only
             mock_method.return_value = 42
             tstcls = TestClass()
-            result1 = tstcls.a_property
-            result2 = tstcls.a_property
+            tstcls.a_property
+            tstcls.a_property
             mock_method.assert_called_once()
         test()
