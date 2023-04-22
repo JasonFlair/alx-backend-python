@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""testing client.py methods"""
 import unittest
 from unittest.mock import PropertyMock, patch
 from client import *
