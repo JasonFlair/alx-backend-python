@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """testing client.py methods"""
 import unittest
 from unittest.mock import MagicMock, PropertyMock, patch
