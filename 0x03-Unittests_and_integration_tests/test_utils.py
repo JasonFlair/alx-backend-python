@@ -40,11 +40,12 @@ class TestGetJson(unittest.TestCase):
     @parameterized.expand([("http://example.com", {"payload": True}),
                            ("http://holberton.io", {"payload": False})])
     @patch('requests.get')
-    def test_get_json(self, mock_get: MagicMock,
+    def test_get_json(self,
                       url: str, 
-                      payload: Dict) -> None:  
+                      payload: Dict, mock_get: MagicMock) -> None:  
         """mock get request"""
-        mock_get = MagicMock(return_value= payload)
+        # mock_get is the mock obj created by patch
+        mock_get.return_value= payload
         mock_resp = mock_get(url)
         
         # check that mock response equals payload checked atm
@@ -69,7 +70,7 @@ class TestMemoize(unittest.TestCase):
             # here patch has created the mock object
             # so assign value only
             mock_method.return_value = 42
-            tstcls = TestClass() 
+            tstcls = TestClass()
             result1 = tstcls.a_property
             result2 = tstcls.a_property
             mock_method.assert_called_once()
