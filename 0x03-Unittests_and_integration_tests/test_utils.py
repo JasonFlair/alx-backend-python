@@ -72,8 +72,10 @@ class TestMemoize(unittest.TestCase):
 
         @patch.object(TestClass, 'a_method')
         def test(mock_method: MagicMock):
-            # here patch has created the mock object
-            # so assign value only
+            """test that a_method is called once
+            here patch has created the mock object
+            so assign value only
+            """
             mock_method.return_value = 42
             tstcls = TestClass()
             tstcls.a_property
