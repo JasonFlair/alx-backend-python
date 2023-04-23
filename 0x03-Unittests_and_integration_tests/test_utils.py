@@ -62,6 +62,7 @@ class TestMemoize(unittest.TestCase):
         """test memoize"""
 
         class TestClass:
+            """a test class"""
 
             def a_method(self):
                 return 42
@@ -72,7 +73,7 @@ class TestMemoize(unittest.TestCase):
 
         @patch.object(TestClass, 'a_method')
         def test(mock_method: MagicMock):
-            """test that a_method is called once
+            """test that a_method is called once.
             here patch has created the mock object
             so assign value only
             """
