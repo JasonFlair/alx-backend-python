@@ -75,14 +75,14 @@ class TestGithubOrgClient(unittest.TestCase):
 
             self.assertEqual(json_resp, mock_get.return_value)
             mock_get.assert_called_once()
-            
-    
+
     @parameterized.expand([({"license": {"key": "my_license"}}, "my_license", True),
                            ({"license": {"key": "other_license"}}, "my_license", False)])
     def test_has_license(self, repo: Dict, license_key: str, result: bool):
         license_check = GithubOrgClient.has_license(repo, license_key)
         self.assertEqual(license_check, result)
-        
+
+
 @parameterized_class([
     {
         'org_payload': TEST_PAYLOAD[0][0],
@@ -90,10 +90,11 @@ class TestGithubOrgClient(unittest.TestCase):
         'expected_repos': TEST_PAYLOAD[0][2],
         'apache2_repos': TEST_PAYLOAD[0][3],
     },
-])    
+])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """Integration testing class
     Excerpted from Tolulope Fakunle"""
+
     @classmethod
     def setUpClass(cls) -> None:
         """Sets up class fixtures before running tests."""
@@ -128,4 +129,3 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     def tearDownClass(cls) -> None:
         """Removes the class fixtures after running all tests."""
         cls.get_patcher.stop()
-    
