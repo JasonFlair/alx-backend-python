@@ -34,7 +34,8 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos(self, mock_get: MagicMock) -> None:
         """test public repos function"""
         # using patch as a context manager
-        with patch.object(GithubOrgClient, "_public_repos_url", MagicMock(return_value="https://api.github.com/orgs/google/repos")) as mock_repos_url:
+        with patch.object(GithubOrgClient, "_public_repos_url",
+                          MagicMock(return_value="https://api.github.com/orgs/google/repos")) as mock_repos_url:
             repo_url = GithubOrgClient._public_repos_url(mock_repos_url)
             # give the mock get request of the repos url a mock response
             mock_get.return_value = [
